@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4i</title>
+</head>
+<body>
+  <!--4i. Using HTML and CSS, try to copy a design-->
+  <p>Adults Plain Cotton T-shirt</p>
+  <p>Price: $7.99</p>
+  <button onclick="add()" style="background: yellow;">Add to cart</button>
+  <button onclick="buy()" style="background: orange;">Buy now</button>
+
+  <!--Continuing from 4i, add onclick attributes to the two buttons
+  * when clicking 'add to cart, create a popup with the text 'added'
+  * when clicking 'buy now', display the message 'loading' in the console, and then create a popup with the text 'Purchased'-->
+
+  <script>
+    function add() {
+      alert("Added");
+    }
+
+    function buy() {
+      console.log("Loading...");
+      alert("Purchased");
+    }
+  </script>
+</body>
+</html>
