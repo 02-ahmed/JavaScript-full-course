@@ -1,6 +1,14 @@
-function checkRock(){
+
+let result = '';
+
+
+// updated the code to have a single function that plays game
+
+
+function playGame(playerMove) {
+
+  let computerMove = '';
   const randomNumber = Math.random();
-      let computerMove = '';
       if (randomNumber >= 0 && randomNumber < 1/3){
         computerMove = 'rock';
       }else if (randomNumber >= 1/3 && randomNumber < 2/3){
@@ -8,70 +16,35 @@ function checkRock(){
       }else if (randomNumber >= 2/3 && randomNumber < 1){
         computerMove= 'scissors';
       }
+      
+  let result = '';
+  if (playerMove === 'scissors') {
+    if (computerMove === 'rock') {
+      result = 'You lose.';
+    }else if (computerMove === 'paper') {
+      result = 'You win.';
+    }else if (computerMove === 'scissors') {
+      result = 'Tie.';
+    }
 
-      console.log(computerMove);
-
-      let result = '';
-
-      if (computerMove === 'rock') {
-        result = 'Tie.';
-      }else if (computerMove === 'paper') {
-        result = 'You lose.';
-      }else if (computerMove === 'scissors') {
-        result = 'You win.';
-      }
-
-      alert(`You picked rock. Computer picked ${computerMove}. ${result}`);
-}
-
-function checkPaper(){
-  const randomNumber = Math.random();
-      let computerMove = '';
-      if (randomNumber >= 0 && randomNumber < 1/3){
-        computerMove = 'rock';
-      }else if (randomNumber >= 1/3 && randomNumber < 2/3){
-        computerMove= 'paper';
-      }else if (randomNumber >= 2/3 && randomNumber < 1){
-        computerMove= 'scissors';
-      }
-
-      console.log(computerMove);
-
-      let result = '';
-
-      if (computerMove === 'rock') {
-        result = 'You win.';
-      }else if (computerMove === 'paper') {
-        result = 'Tie.';
-      }else if (computerMove === 'scissors') {
-        result = 'You lose.';
-      }
-
-      alert(`You picked paper. Computer picked ${computerMove}. ${result}`);
-}
-
-function checkScissors(){
-  const randomNumber = Math.random();
-      let computerMove = '';
-      if (randomNumber >= 0 && randomNumber < 1/3){
-        computerMove = 'rock';
-      }else if (randomNumber >= 1/3 && randomNumber < 2/3){
-        computerMove= 'paper';
-      }else if (randomNumber >= 2/3 && randomNumber < 1){
-        computerMove= 'scissors';
-      }
-
-      console.log(computerMove);
-
-      let result = '';
-
-      if (computerMove === 'rock') {
-        result = 'You lose.';
-      }else if (computerMove === 'paper') {
-        result = 'You win.';
-      }else if (computerMove === 'scissors') {
-        result = 'Tie.';
-      }
-
-      alert(`You picked scissors. Computer picked ${computerMove}. ${result}`);
+  }else if (playerMove === 'paper') {
+    if (computerMove === 'rock') {
+      result = 'You win.';
+    }else if (computerMove === 'paper') {
+      result = 'Tie.';
+    }else if (computerMove === 'scissors') {
+      result = 'You lose.';
+    }
+    
+  }else if (playerMove === 'rock') {
+    if (computerMove === 'rock') {
+      result = 'Tie.';
+    }else if (computerMove === 'paper') {
+      result = 'You lose.';
+    }else if (computerMove === 'scissors') {
+      result = 'Win.';
+    }
+  }
+  
+  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
 }
