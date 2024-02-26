@@ -6,17 +6,18 @@ function showQuantity(){
 }
 
 function addToCart(){
-  cartQuantity+=1;
+  //improved code next day by making sure cart quantity did not exceed 10
+  cartQuantity < 10 ? cartQuantity+=1 : alert('The cart is full');
   showQuantity();
 }
 
 function add2(){
-  cartQuantity+=2;
+  cartQuantity < 10 ? cartQuantity+=2 : alert('The cart is full');
   showQuantity();
 } 
 
 function add3(){
-  cartQuantity += 3;
+  cartQuantity < 10 ? cartQuantity+=3 : alert('The cart is full');
   showQuantity();
 }
 
@@ -25,6 +26,23 @@ function reset(){
   console.log('Cart was reset.')
   showQuantity();
 }
+
+function remove(){
+  cartQuantity > 0 ? cartQuantity-=1 : alert('Not enough items in the cart');
+  showQuantity();
+}
+
+function remove2(){
+  cartQuantity >= 2 ? cartQuantity-=2 : alert('Not enough items in the cart');
+  showQuantity();
+}
+
+function remove3(){
+  cartQuantity >= 3 ? cartQuantity-=3 : alert('Not enough items in the cart');
+  showQuantity();
+}
+
+
 
 /* function add(){
   if (buttonText === "Add to cart"){
