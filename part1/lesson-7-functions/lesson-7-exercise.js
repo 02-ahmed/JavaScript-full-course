@@ -20,3 +20,10 @@ function convertToCelsius(fahrenheit) {
 
 let conversion2 = convertToCelsius(86);
 console.log(conversion2);
+//========================================================================
+function convertTemperature(degrees, unit) {
+  unit === 'C'? console.log(conversion1) : unit === 'F' ? console.log(conversion2) :console.log('invalid unit');
+}
+
+convertTemperature(25, 'C');
+convertTemperature(86, 'F');
