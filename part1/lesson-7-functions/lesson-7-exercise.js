@@ -12,3 +12,11 @@ greet();
 
 let conversion1 = convertToFahrenheit(25);
 console.log(conversion1)
+
+function convertToCelsius(fahrenheit) {
+  let celsius = (fahrenheit - 32)* 5/9;
+  return `${celsius}C`;
+}
+
+let conversion2 = convertToCelsius(86);
+console.log(conversion2);
