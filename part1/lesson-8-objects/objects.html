@@ -8,15 +8,34 @@
 <body>
   
   <script>
-    const product = {
+/*     const product = {
       name: 'socks' ,
       price: 1090 ,
       size: 42 ,
     }
-
     console.log(product);
     console.log(product.name);
-    console.log(product.size)
+    console.log(product.size); */
+
+    const product2 = {
+      name:'shirt',
+      'delivery-time': '1 day',
+      rating:{
+        stars: 4.5,
+        count: 87.
+      },
+      fun: function func1() {
+        console.log('function in object')
+      }
+    };
+
+    console.log(product2['delivery-time']);
+    product2.fun();
+
+    console.log(JSON.stringify(product2));
+
+    const jsonString = JSON.stringify(product2);
+    console.log(JSON.parse(jsonString));
   </script>
 </body>
 </html>

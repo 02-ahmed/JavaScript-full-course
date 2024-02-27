@@ -1,8 +1,22 @@
 
-let result = '';
+
 
 
 // updated the code to have a single function that plays game
+let score = JSON.parse(localStorage.getItem('score')) || {
+  win: 0 ,
+  loss: 0 ,
+  tie: 0,
+};
+
+//shortcut for code on top
+/* if (!score) {
+  score = {
+    win: 0,
+    loss: 0,
+    tie: 0,
+  }
+} */
 
 
 function playGame(playerMove) {
@@ -54,12 +68,10 @@ function playGame(playerMove) {
     score.tie++;
   }
   
+  localStorage.setItem('score', JSON.stringify(score));
+
   alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
 Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`);
 }
 
-const score = {
-  win: 0 ,
-  loss: 0 ,
-  tie: 0,
-}
+
