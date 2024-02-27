@@ -7,16 +7,16 @@
 </head>
 <body>
   <p>
-    <button onclick="showQuantity()">Show Quantity</button>
-    <button onclick="addToCart()">Add to Cart</button>
-    <button onclick="add2()">+2</button>
-    <button onclick="add3()">+3</button>
-    <button onclick="reset()">Reset Cart</button>
+    <button onclick="updateCartQuantity('show quantity')">Show Quantity</button>
+    <button onclick="updateCartQuantity(1)">Add to Cart</button>
+    <button onclick="updateCartQuantity(2)">+2</button>
+    <button onclick="updateCartQuantity(3)">+3</button>
+    <button onclick="updateCartQuantity('reset')">Reset Cart</button>
   </p>
   <p>
-    <button onclick="remove()">Remove from cart</button>
-    <button onclick="remove2()">-2</button>
-    <button onclick="remove3()">-3</button>
+    <button onclick="updateCartQuantity(-1)">Remove from cart</button>
+    <button onclick="updateCartQuantity(-2)">-2</button>
+    <button onclick="updateCartQuantity(-3)">-3</button>
   </p>
   
   

@@ -1,59 +1,24 @@
 let cartQuantity = 0;
 
+function updateCartQuantity(button){
+  if (button === 'show quantity') {
+    showQuantity();
+  }else if(button > 0){
+    cartQuantity < 10 ? cartQuantity+=button : alert('The cart is full');
+    showQuantity();
+  }else if (button < 0){
+    cartQuantity > 0 ? cartQuantity-=(-button): alert('Not enough items in cart');
+    showQuantity();
+  }else if(button === 'reset') {
+    cartQuantity = 0;
+    alert('Cart was reset');
+    console.log('Cart was reset.');
+    showQuantity();
+  }
+}
 
 function showQuantity(){
   console.log(`Cart quantity: ${cartQuantity}`);
 }
 
-function addToCart(){
-  //improved code next day by making sure cart quantity did not exceed 10
-  cartQuantity < 10 ? cartQuantity+=1 : alert('The cart is full');
-  showQuantity();
-}
 
-function add2(){
-  cartQuantity < 10 ? cartQuantity+=2 : alert('The cart is full');
-  showQuantity();
-} 
-
-function add3(){
-  cartQuantity < 10 ? cartQuantity+=3 : alert('The cart is full');
-  showQuantity();
-}
-
-function reset(){
-  cartQuantity = 0;
-  console.log('Cart was reset.')
-  showQuantity();
-}
-
-function remove(){
-  cartQuantity > 0 ? cartQuantity-=1 : alert('Not enough items in the cart');
-  showQuantity();
-}
-
-function remove2(){
-  cartQuantity >= 2 ? cartQuantity-=2 : alert('Not enough items in the cart');
-  showQuantity();
-}
-
-function remove3(){
-  cartQuantity >= 3 ? cartQuantity-=3 : alert('Not enough items in the cart');
-  showQuantity();
-}
-
-
-
-/* function add(){
-  if (buttonText === "Add to cart"){
-    cartQuantity+=1;
-  }else if(buttonText === "+2"){
-    cartQuantity +=2;
-  }else if(buttonText === "+3"){
-    cartQuantity +=3;
-  }else if(buttonText === "Reset Cart"){
-    cartQuantity = 0;
-  }
-
-  showQuantity();
-} */
