@@ -6,9 +6,11 @@ function updateCartQuantity(button){
   }else if(button > 0){
     cartQuantity < 10 ? cartQuantity+=button : alert('The cart is full');
     showQuantity();
+    return;
   }else if (button < 0){
     cartQuantity > 0 ? cartQuantity-=(-button): alert('Not enough items in cart');
     showQuantity();
+    return;
   }else if(button === 'reset') {
     cartQuantity = 0;
     alert('Cart was reset');
