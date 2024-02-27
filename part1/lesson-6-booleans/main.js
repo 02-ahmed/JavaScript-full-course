@@ -42,9 +42,24 @@ function playGame(playerMove) {
     }else if (computerMove === 'paper') {
       result = 'You lose.';
     }else if (computerMove === 'scissors') {
-      result = 'Win.';
+      result = 'You win.';
     }
   }
+
+  if (result === 'You win.'){
+    score.win +=1
+  }else if (result === 'You lose.') {
+    score.loss++;
+  }else if (result === 'Tie.') {
+    score.tie++;
+  }
   
-  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`);
+}
+
+const score = {
+  win: 0 ,
+  loss: 0 ,
+  tie: 0,
 }
