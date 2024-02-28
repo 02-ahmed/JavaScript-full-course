@@ -8,3 +8,7 @@ console.log(product);
 //=============================
 product.price = `${amount + 500} cents`;
 console.log(product);
+
+//================================
+product['delivery-time'] = '3 days';
+console.log(product);
