@@ -35,7 +35,7 @@ function comparePrice(product1, product2) {
     return product1
   }
 }
-
+//=============================================
 function isSameProduct(product1, product2) {
   if (product1.name === product2.name && product1.price === product2.price) {
     return true
@@ -45,3 +45,8 @@ function isSameProduct(product1, product2) {
 }
 
 console.log(isSameProduct(product1, product2));
+//=================================================
+//convert string to all lower case
+let string = 'Good Morning'
+let convertedString = string.toLowerCase();
+console.log(convertedString);
