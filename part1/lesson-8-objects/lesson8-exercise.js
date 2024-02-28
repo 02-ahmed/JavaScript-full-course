@@ -50,3 +50,6 @@ console.log(isSameProduct(product1, product2));
 let string = 'Good Morning'
 let convertedString = string.toLowerCase();
 console.log(convertedString);
+
+//========================================================
+console.log('test'.repeat(2));
