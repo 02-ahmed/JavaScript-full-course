@@ -1,11 +1,19 @@
-
+const score = {
+  wins:0 ,
+  losses:0 ,
+}
 
 function playGame(guess) {
   let randomNumber = Math.random();
-  let result = randomNumber < 0.5 ? 'heads' : 'tails'
+  let result = randomNumber < 0.5 ? 'heads' : 'tails';
+  let resultMsg = '';
   if (guess === result) {
-    console.log('You win');
+    resultMsg = 'You win!'
   }else {
-    console.log('You lose');
+    resultMsg = 'You lose!';
   }
+  console.log(resultMsg);
+
+  resultMsg === 'You win!' ? score.wins+=1 : score.losses+=1;
+  console.log(score);
 };
