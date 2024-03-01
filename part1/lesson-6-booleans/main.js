@@ -9,6 +9,9 @@ let score = JSON.parse(localStorage.getItem('score')) || {
   tie: 0,
 };
 
+document.querySelector(".js-score")
+  .innerHTML = `Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`;
+
 //shortcut for code on top
 /* if (!score) {
   score = {
@@ -17,6 +20,11 @@ let score = JSON.parse(localStorage.getItem('score')) || {
     tie: 0,
   }
 } */
+
+function updateScoreElement() {
+  document.querySelector(".js-score")
+  .innerHTML = `Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`;
+}
 
 
 function playGame(playerMove) {
@@ -69,6 +77,8 @@ function playGame(playerMove) {
   }
   
   localStorage.setItem('score', JSON.stringify(score));
+
+  updateScoreElement();
 
   alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
 Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`);
