@@ -1,7 +1,3 @@
-
-
-
-
 // updated the code to have a single function that plays game
 let score = JSON.parse(localStorage.getItem('score')) || {
   win: 0 ,
@@ -9,8 +5,8 @@ let score = JSON.parse(localStorage.getItem('score')) || {
   tie: 0,
 };
 
-document.querySelector(".js-score")
-  .innerHTML = `Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`;
+updateScoreElement();
+
 
 //shortcut for code on top
 /* if (!score) {
@@ -28,7 +24,6 @@ function updateScoreElement() {
 
 
 function playGame(playerMove) {
-
   let computerMove = '';
   const randomNumber = Math.random();
       if (randomNumber >= 0 && randomNumber < 1/3){
@@ -79,9 +74,7 @@ function playGame(playerMove) {
   localStorage.setItem('score', JSON.stringify(score));
 
   updateScoreElement();
+  document.querySelector(".js-moves").innerHTML = `You ${playerMove.toUpperCase()} --- ${computerMove.toUpperCase()} Computer`;
+  document.querySelector(".js-result").innerHTML = `${result}`;
 
-  alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`);
 }
-
-
