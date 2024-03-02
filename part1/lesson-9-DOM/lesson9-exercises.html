@@ -6,13 +6,29 @@
     <title>Exercise 9</title>
   </head>
   <body>
-    <button>9a</button>
+    <!--exercise 9a-->
+    <p>
+      <button>9a</button>
+    </p>
 
-    <p><button class="js-button">9b</button></p>
+    <!--exercise 9b-->
+    <p>
+      <button class="js-button">9b</button>
+    </p>
     
-    <button onclick="play('heads')">heads</button>
-    <button onclick="play('tails')">tails</button>
-    <p class="js-text"></p>
+    <!--exercise 9c-->
+    <p>
+      <button onclick="play('heads')">heads</button>
+      <button onclick="play('tails')">tails</button>
+      <p class="js-text"></p>
+    </p>
+
+    <!--exercise 9d-->
+    <p>
+      <input placeholder="Name" class="js-name-input">
+      <button class="js-submit-button" onclick="nameSubmit();">Submit</button>
+      <p class="js-name-display"></p>
+    </p>
     
     <script>
       console.log(document.querySelector('button'));
@@ -25,6 +41,11 @@
         }else {
           document.querySelector('.js-text').innerHTML = `You chose: ${button}`
         }
+      }
+
+      function nameSubmit() {
+        let name = document.querySelector('.js-name-input').value;
+        document.querySelector('.js-name-display').innerHTML = `Your name is: ${name}`;
       }
 
 
