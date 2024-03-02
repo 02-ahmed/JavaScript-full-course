@@ -10,12 +10,22 @@
 
     <p><button class="js-button">9b</button></p>
     
-
+    <button onclick="play('heads')">heads</button>
+    <button onclick="play('tails')">tails</button>
+    <p class="js-text"></p>
     
     <script>
       console.log(document.querySelector('button'));
 
       document.querySelector('.js-button').innerHTML = '9b done!';
+
+      function play(button) {
+        if (button === 'heads') {
+          document.querySelector('.js-text').innerHTML = `You chose: ${button}`
+        }else {
+          document.querySelector('.js-text').innerHTML = `You chose: ${button}`
+        }
+      }
 
 
     </script>
