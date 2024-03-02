@@ -14,7 +14,16 @@
     ">Calculate</button>
     <p class="js-total-cost"></p>
 
+    <p>
+      <input class="js-input" onkeyup="displayText();">
+      <p class="js-input-display" ></p>
+    </p>
+
     <script>
+      function displayText() {
+        document.querySelector('.js-input-display').innerHTML = document.querySelector('.js-input').value
+      }
+
       function handleCostKeyDown(event) {
       if (event.key === 'Enter') {
         calculateTotal();
