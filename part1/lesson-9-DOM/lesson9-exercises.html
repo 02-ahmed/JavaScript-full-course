@@ -25,7 +25,7 @@
 
     <!--exercise 9d-->
     <p>
-      <input placeholder="Name" class="js-name-input">
+      <input placeholder="Name" class="js-name-input" onkeydown="enterToSubmit();">
       <button class="js-submit-button" onclick="nameSubmit();">Submit</button>
       <p class="js-name-display"></p>
     </p>
@@ -46,6 +46,12 @@
       function nameSubmit() {
         let name = document.querySelector('.js-name-input').value;
         document.querySelector('.js-name-display').innerHTML = `Your name is: ${name}`;
+      }
+
+      function enterToSubmit() {
+        if (event.key === 'Enter') {
+          nameSubmit();
+        }
       }
 
 
