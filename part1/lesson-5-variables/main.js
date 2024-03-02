@@ -1,4 +1,5 @@
 let cartQuantity = 0;
+showQuantity();
 
 function updateCartQuantity(button){
   if (button === 'show quantity') {
@@ -14,13 +15,12 @@ function updateCartQuantity(button){
   }else if(button === 'reset') {
     cartQuantity = 0;
     alert('Cart was reset');
-    console.log('Cart was reset.');
     showQuantity();
   }
 }
 
 function showQuantity(){
-  console.log(`Cart quantity: ${cartQuantity}`);
+  document.querySelector('.js-quantity-display').innerHTML = `Cart quantity: ${cartQuantity}`;
 }
 
 
