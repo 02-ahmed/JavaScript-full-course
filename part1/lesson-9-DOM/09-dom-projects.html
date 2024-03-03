@@ -39,7 +39,9 @@
         cursor: pointer;
       }
 
-      
+      .js-warning {
+        color: red;
+      }
     </style>
   </head>
   <body>
@@ -64,12 +66,18 @@
       function calculateTotal() {
         const inputElement = document.querySelector('.js-cost-input');
         let cost = Number(inputElement.value);
-
-        if (cost < 40) {
+        if (cost > 0) {
+          if (cost < 40) {
           cost += 10;
+          document.querySelector('.js-total-cost').innerHTML = `Total cost is $${cost}`;
         }
+        }else {
+          document.querySelector('.js-total-cost').classList.add('js-warning');
+          document.querySelector('.js-total-cost').innerHTML = `Error: cost cannot be less than $0`;
+        }
+        
 
-        document.querySelector('.js-total-cost').innerHTML = `Total cost is $${cost}`
+        
       }
       
       function subscribe() {
