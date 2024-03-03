@@ -26,3 +26,23 @@
    font-weight: bold;
    cursor: pointer;
 }
+
+.game {
+  border: none;
+  padding: 20px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.is-toggled {
+  border: none;
+  padding: 20px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #000000;
+  color: rgb(230, 230, 230);
+}
