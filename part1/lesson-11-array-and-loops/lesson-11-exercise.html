@@ -26,6 +26,25 @@
       }
       console.log(getLastValue([1, 20, 22, 24, 5]));
       console.log(getLastValue(['hi', 'hello', 'good']));
+
+
+
+      function arraySwap(array) {
+        let firstIndex = 0;
+        let finalIndex = array.length - 1;
+
+        let initialIndex = array[0]
+        let lastIndex = array[array.length - 1];
+
+        array.splice(firstIndex, 1, lastIndex);
+        array.splice(finalIndex, 1, initialIndex);
+        /* array.push(initialIndex); */
+
+        return array;
+      }
+
+      console.log(arraySwap([1, 20, 22, 24, 5]));
+      console.log(arraySwap(['hi', 'hello', 'good']));
     </script>
   </body>
 </html>
