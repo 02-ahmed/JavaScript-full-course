@@ -46,15 +46,42 @@
       console.log(arraySwap([1, 20, 22, 24, 5]));
       console.log(arraySwap(['hi', 'hello', 'good']));
 
-      console.log("=====================================")
+      console.log("=====================================");
 
       for (let i =0; i <= 10; i+=2){
         console.log(i);
       }
-      console.log("======================================")
+      console.log("======================================");
       for (let i =5; i >=0; i--){
         console.log(i);
       }
+
+      console.log("======================================");
+      console.log("11f for 11d");
+
+      let j = 0;
+      while (j <= 10) {
+        console.log(j);
+        j+=2;
+      }
+
+      console.log("11f for 11e");
+      let k = 5;
+      while (k >= 0) {
+        console.log(k);
+        k--;
+      }
+
+      function addOne(array){
+        for(let i =0; i < array.length; i++) {
+          array[i]++;
+        }
+        return array
+      }
+      console.log(addOne([1,2,3]));
+      console.log(addOne([-2, -1, 0, 99]));
+
+
     </script>
   </body>
 </html>
