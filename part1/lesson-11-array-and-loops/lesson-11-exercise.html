@@ -156,6 +156,22 @@
       console.log(minMax([]));
       console.log(minMax([3]));
 
+      function countWords(words) {
+        let wordObject = {}
+
+        for (let i = 0; i < words.length; i++) {
+          let word = words[i];
+          if (!wordObject[word]) {
+            wordObject[word] = 1;
+          }else {
+            wordObject[word]++;
+          }
+        }
+        return wordObject;
+      }
+
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
 
 
 
