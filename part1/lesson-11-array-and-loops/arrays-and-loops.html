@@ -108,6 +108,19 @@
         console.log(i);
         i++
       }
+
+      function doubleArray(nums) {
+        let numsDoubled = []
+        for (let j = 0; j < nums.length; j++) {
+          if (nums[j] === 0) {
+            return numsDoubled;
+          }
+          numsDoubled.push(nums[j] + nums[j])
+        }
+        return numsDoubled;
+    }
+
+    console.log(doubleArray([3,4.5, 6, 0]))
     </script>
   </body>
 </html>
