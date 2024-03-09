@@ -9,16 +9,27 @@
     
     <script>
 
-      const test = ['hello', 'world', 'search', 'good']
+      function checker(words) {
 
-      for (let i = 0; i < test.length; i++) {
-        if (test[i] === 'search') {
-          console.log(i)
-          break
-        }else {
-          console.log(-1)
+        let checker = []
+        let i = 0;
+        while ( i < words.length) {
+          if (words[i] !== 'search') {
+            i++;
+            continue;
+          }else {
+            checker.push(i)
+            console.log(checker[0])
+          }
+          i++
         }
-      }
+        if (checker.length === 0) {
+          console.log(-1);
+        }
+    }
+
+    checker(['hello', 'world', 'search', 'good']);
+    checker(['not', 'found'])
     </script>
   </body>
 </html>
