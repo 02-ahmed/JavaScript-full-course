@@ -9,7 +9,7 @@
     
     <script>
 
-      function checker(words) {
+     /*  function checker(words) {
 
         let checker = []
         let i = 0;
@@ -18,7 +18,7 @@
             i++;
             continue;
           }else {
-            checker.push(i)
+            checker.push(i);
             console.log(checker[0])
           }
           i++
@@ -30,6 +30,37 @@
 
     checker(['hello', 'world', 'search', 'good']);
     checker(['not', 'found'])
+    checker(['hello', 'world', 'search', 'good', 'search']) */
+
+    //easier solution
+
+    let words = ['hello', 'world','search', 'good']
+    let index = -1
+    for (let i = 0; i < words.length; i++) {
+      if (words[i] === 'search') {
+        index = i
+      }
+    }
+    console.log(index);
+
+    words = ['not', 'found'];
+    index = -1;
+    for (let i = 0; i < words.length; i++) {
+      if (words[i] === 'search') {
+        index = i
+      }
+    }
+    console.log(index)
+
+    words = ['hello', 'world','search', 'good', 'search']
+    index = -1
+    for (let i = 0; i < words.length; i++) {
+      if (words[i] === 'search') {
+        index = i;
+        break;
+      }
+    }
+    console.log(index);
     </script>
   </body>
 </html>
