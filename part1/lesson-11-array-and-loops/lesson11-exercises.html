@@ -94,11 +94,12 @@
     
     
     function removeEgg2(foods) {
-      foods = foods.reverse()
+      let foodsCopy = foods.slice()
+      foodsCopy = foodsCopy.reverse()
       let result = [];
       let skips = 0;
-      for (let i = 0; i < foods.length; i++) {
-        let food = foods[i];
+      for (let i = 0; i < foodsCopy.length; i++) {
+        let food = foodsCopy[i];
         if (food === 'egg') {
           skips++
           if (skips <= 2) {
@@ -115,8 +116,11 @@
 
     console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
 
+    const foods = ['egg', 'apple', 'egg', 'egg', 'ham']
 
     console.log(removeEgg2(['egg', 'apple', 'egg', 'egg', 'ham']))
+
+    console.log(foods)
 
 
 
