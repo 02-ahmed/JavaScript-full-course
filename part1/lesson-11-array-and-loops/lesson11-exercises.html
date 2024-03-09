@@ -94,6 +94,7 @@
     
     
     function removeEgg2(foods) {
+      foods = foods.reverse()
       let result = [];
       let skips = 0;
       for (let i = 0; i < foods.length; i++) {
@@ -109,13 +110,17 @@
           result.push(food)
         }
       }
-      return result
+      return result.reverse();
     }
 
     console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
 
 
     console.log(removeEgg2(['egg', 'apple', 'egg', 'egg', 'ham']))
+
+
+
+
     </script>
   </body>
 </html>
