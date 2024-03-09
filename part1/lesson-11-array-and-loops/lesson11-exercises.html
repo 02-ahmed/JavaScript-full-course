@@ -90,8 +90,32 @@
       }
       return result
     }
+    
+    
+    
+    function removeEgg2(foods) {
+      let result = [];
+      let skips = 0;
+      for (let i = 0; i < foods.length; i++) {
+        let food = foods[i];
+        if (food === 'egg') {
+          skips++
+          if (skips <= 2) {
+            continue
+          }else{
+            result.push(food);
+          }
+        }else {
+          result.push(food)
+        }
+      }
+      return result
+    }
 
-    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']))
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+
+    console.log(removeEgg2(['egg', 'apple', 'egg', 'egg', 'ham']))
     </script>
   </body>
 </html>
