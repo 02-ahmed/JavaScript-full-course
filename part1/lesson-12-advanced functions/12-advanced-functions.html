@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    
+    <script>
+
+      function greeting() { //advantages of this style:
+        console.log('hello') //1. easier to read
+      }                      //2. allows hoisting (can call)
+      greeting();            //   the function before declare
+
+      
+      const function1 = function greeting() {
+        console.log('hello2');
+      }
+
+      console.log(function1);
+
+      function1();
+
+      const object1 = {
+        num: 2,
+        fun: function greeting() {
+          console.log('hello3')  //function in an object is
+        }                        //called a method
+      }
+
+      object1.fun();
+
+
+      function display(param) {
+        console.log(param)
+      }
+
+      display(2);
+
+      function run(param) {
+        param();
+      }
+
+      run(function() {
+        console.log('hello4')
+      })
+    </script>
+  </body>
+</html>
