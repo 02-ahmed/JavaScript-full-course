@@ -22,18 +22,26 @@ function updateScoreElement() {
   .innerHTML = `Wins: ${score.win}, Losses: ${score.loss}, Ties: ${score.tie}`;
 }
 
+let isAutoPlaying = false;
+let intervalId;
+
+function autoPlay() {
+  if (!isAutoPlaying) {
+    intervalId = setInterval(function() {
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+  }
+}
+
 
 function playGame(playerMove) {
-  let computerMove = '';
-  const randomNumber = Math.random();
-      if (randomNumber >= 0 && randomNumber < 1/3){
-        computerMove = 'rock';
-      }else if (randomNumber >= 1/3 && randomNumber < 2/3){
-        computerMove= 'paper';
-      }else if (randomNumber >= 2/3 && randomNumber < 1){
-        computerMove= 'scissors';
-      }
-      
+  const computerMove = pickComputerMove();
+  
   let result = '';
   if (playerMove === 'scissors') {
     if (computerMove === 'rock') {
@@ -82,4 +90,19 @@ function playGame(playerMove) {
 
   document.querySelector(".js-result").innerHTML = `${result}`;
 
+}
+
+
+function pickComputerMove() {
+  let computerMove = '';
+  const randomNumber = Math.random();
+      if (randomNumber >= 0 && randomNumber < 1/3){
+        computerMove = 'rock';
+      }else if (randomNumber >= 1/3 && randomNumber < 2/3){
+        computerMove= 'paper';
+      }else if (randomNumber >= 2/3 && randomNumber < 1){
+        computerMove= 'scissors';
+      }
+  
+  return computerMove;
 }
