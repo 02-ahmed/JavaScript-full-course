@@ -9,7 +9,7 @@
     
     <script>
 
-      function greeting() { //advantages of this style:
+      /* function greeting() { //advantages of this style:
         console.log('hello') //1. easier to read
       }                      //2. allows hoisting (can call)
       greeting();            //   the function before declare
@@ -45,7 +45,14 @@
 
       run(function() {
         console.log('hello4')
-      })
+      }) */
+
+
+      setTimeout(function() {
+        console.log('timeout');
+      }, 3000);
+
+      console.log('next line');
     </script>
   </body>
 </html>
