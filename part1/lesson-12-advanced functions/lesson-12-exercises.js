@@ -26,9 +26,13 @@ function loading() {
   document.querySelector(".js-start-button").innerHTML = "Loading...";
 }
 
+let timeoutId;
+
 function addToCart() {
   document.querySelector(".js-cart-message").innerHTML = "Added";
-  setTimeout(function(){
+  clearTimeout(timeoutId);
+
+  timeoutId = setTimeout(function(){
     document.querySelector(".js-cart-message").innerHTML = "";
-  }, 2000);
+  }, 5000);
 }
