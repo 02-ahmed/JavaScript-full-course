@@ -19,5 +19,9 @@ runTwice(function() {
 runTwice(add)
 
 function finished() {
-  document.querySelector(".js-start-button").innerHTML = "Finished!"
+  document.querySelector(".js-start-button").innerHTML = "Finished!";
+}
+
+function loading() {
+  document.querySelector(".js-start-button").innerHTML = "Loading...";
 }
