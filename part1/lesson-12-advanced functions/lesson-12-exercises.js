@@ -17,3 +17,7 @@ runTwice(function() {
 })
 
 runTwice(add)
+
+function finished() {
+  document.querySelector(".js-start-button").innerHTML = "Finished!"
+}
