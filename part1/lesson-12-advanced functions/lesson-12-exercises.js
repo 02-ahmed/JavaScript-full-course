@@ -36,3 +36,21 @@ function addToCart() {
     document.querySelector(".js-cart-message").innerHTML = "";
   }, 5000);
 }
+
+document.title = "App";
+
+
+
+setInterval(function() {
+  changeTitle();
+}, 1000)
+
+
+
+function changeTitle() {
+  if (document.title === "App") {
+    document.title = "(2) New Messages"
+  }else {
+    document.title = "App"
+  }
+}
