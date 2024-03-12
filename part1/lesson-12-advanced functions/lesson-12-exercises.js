@@ -4,3 +4,16 @@ let add = function() {
 
 add();
 add();
+
+console.log("========12b=======")
+
+function runTwice(fun) {
+  fun();
+  fun();
+}
+
+runTwice(function() {
+  console.log('12b')
+})
+
+runTwice(add)
