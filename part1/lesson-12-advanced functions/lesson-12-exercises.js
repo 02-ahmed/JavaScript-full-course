@@ -25,3 +25,10 @@ function finished() {
 function loading() {
   document.querySelector(".js-start-button").innerHTML = "Loading...";
 }
+
+function addToCart() {
+  document.querySelector(".js-cart-message").innerHTML = "Added";
+  setTimeout(function(){
+    document.querySelector(".js-cart-message").innerHTML = "";
+  }, 2000);
+}

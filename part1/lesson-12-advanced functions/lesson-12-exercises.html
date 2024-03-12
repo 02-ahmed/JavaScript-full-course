@@ -6,9 +6,18 @@
     <title>Lesson 12 Exercise</title>
   </head>
   <body>
-    <button style="cursor: pointer;" class="js-start-button" onclick="loading();setTimeout(function() {
-      finished()
-    }, 1000)">Start</button>
+    <div>
+      <button style="cursor: pointer;" class="js-start-button" onclick="loading();setTimeout(function() {
+        finished()
+      }, 1000)">Start</button>
+    </div>
+
+    <div>
+      <button class="js-cart-button" onclick="addToCart()">
+        Add to cart
+      </button>
+      <p class="js-cart-message"></p>
+    </div>
     
     <script src="lesson-12-exercises.js"></script>
   </body>
