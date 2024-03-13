@@ -46,10 +46,10 @@ setInterval(function() {
 }, 1000)
 
 
-
+let messages = 2;
 function changeTitle() {
   if (document.title === "App") {
-    document.title = "(2) New Messages"
+    document.title = `(${messages}) New Messages`
   }else {
     document.title = "App"
   }
