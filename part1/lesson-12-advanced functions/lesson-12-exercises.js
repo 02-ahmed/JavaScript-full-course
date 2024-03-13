@@ -45,12 +45,19 @@ setInterval(function() {
   changeTitle();
 }, 1000)
 
+let messages = JSON.parse(localStorage.getItem('messages'))|| 2;
 
-let messages = 2;
 function changeTitle() {
-  if (document.title === "App") {
+  
+  if (messages < 0) {
+    messages=0;
+  }
+
+  if (document.title === "App" && messages!==0) {
     document.title = `(${messages}) New Messages`
   }else {
     document.title = "App"
   }
+
+  localStorage.setItem("messages", JSON.stringify(messages));
 }
