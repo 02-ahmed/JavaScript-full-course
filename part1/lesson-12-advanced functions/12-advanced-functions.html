@@ -65,13 +65,37 @@
         'make dinner',
         'wash dishes',
         'watch youtube'
-      ].forEach(function(value, index){
+      ].forEach((value, index) => {
         if (value === 'wash dishes') {
           return
         }
         console.log(index);
         console.log(value);
       });
+
+      const regularFunction = function(param, param2) {
+        console.log('hello');
+        return 5;
+      };
+
+      const arrowFunction = (param, param2) => {
+        console.log('hello');
+        return 5;
+      };
+      arrowFunction();
+
+      const oneParam = param => { //for arrow functions, the 
+        console.log(param + 1);   // bracket is optional
+      };
+      oneParam(2);
+
+      //const oneLine = () => {
+      //  return 2+3; 
+      //}
+      // can be written on one line as
+
+      const oneLine = () => 2 + 3;
+      console.log(oneLine())
     </script>
   </body>
 </html>
