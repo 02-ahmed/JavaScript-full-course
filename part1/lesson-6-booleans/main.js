@@ -61,6 +61,16 @@ document.querySelector('.js-reset-button').addEventListener('click', () => {
 
 document.querySelector('.js-autoplay-button').addEventListener('click', () => {
   autoPlay();
+});
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    playGame('rock');
+  } else if (event.key === 'p') {
+    playGame('paper');
+  } else if (event.key = 's') {
+    playGame('scissors');
+  }
 })
 
 function playGame(playerMove) {
