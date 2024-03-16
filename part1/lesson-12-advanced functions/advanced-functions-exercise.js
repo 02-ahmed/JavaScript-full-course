@@ -30,3 +30,9 @@ function addNum(array, num) {
 }
 console.log(addNum([1, 2, 3], 2));
 console.log(addNum([-2, -1, 0, 99], 2));
+
+//exercise 12n
+function removeEgg(foods) {
+  return foods.filter(value => value !== 'egg')
+}
+console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']))
