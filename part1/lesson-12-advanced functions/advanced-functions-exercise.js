@@ -8,3 +8,18 @@ console.log(multiply(7, 10)); */
 const multiply = (num1, num2) => num1 * num2;
 console.log(multiply(2, 3));
 console.log(multiply(7, 10));
+
+//exercise 12l
+
+function countPositive(nums) {
+  let count = 0;
+  nums.forEach((num) => {
+    if (num > 0) {
+      count++;
+    }
+  });
+  
+  return count;
+}
+console.log(countPositive([1, -3, 5]));
+console.log(countPositive([-2, 3, -5, 7, 10]));
