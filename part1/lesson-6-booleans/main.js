@@ -74,6 +74,13 @@ document.body.addEventListener('keydown', (event) => {
     playGame('scissors');
   } else if (event.key === 'a') {
     autoPlay();
+  }else if (event.key === 'Backspace') {
+    score.win = 0;
+    score.loss = 0;
+    score.tie = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+    alert('Scores were reset');
   }
 })
 
