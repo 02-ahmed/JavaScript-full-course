@@ -33,6 +33,14 @@ console.log(addNum([-2, -1, 0, 99], 2));
 
 //exercise 12n
 function removeEgg(foods) {
-  return foods.filter(value => value !== 'egg')
+  let removedEggs = 0
+  return foods.filter((value) => {
+    if (value === 'egg' && removedEggs < 2) {
+      removedEggs++;
+      return false;
+    }
+
+    return true
+  })
 }
 console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']))
