@@ -7,17 +7,15 @@
   </head>
   <body>
     <div>
-      <button style="cursor: pointer;" class="js-start-button" onclick="loading();setTimeout(() => {
-        finished()
-      }, 1000)">Start</button>
+      <button style="cursor: pointer;" class="js-start-button">Start</button>
     </div>
 
     <div>
-      <button class="js-cart-button" onclick="addToCart()">
+      <button class="js-cart-button">
         Add to cart
       </button>
-      <button onclick="messages++">Add</button>
-      <button onclick="messages--">Remove</button>
+      <button class="js-add">Add</button>
+      <button class="js-remove">Remove</button>
       <p class="js-cart-message"></p>
     </div>
     

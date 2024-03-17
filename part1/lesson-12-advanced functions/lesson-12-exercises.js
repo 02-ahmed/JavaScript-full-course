@@ -60,3 +60,23 @@ function changeTitle() {
 
   localStorage.setItem("messages", JSON.stringify(messages));
 }
+
+
+document.querySelector('.js-start-button').addEventListener('click', () => {
+  loading();
+  setTimeout(() => {
+    finished()
+  }, 1000)
+});
+
+document.querySelector('.js-cart-button').addEventListener('click', () => {
+  addToCart();
+});
+
+document.querySelector('.js-add').addEventListener('click', () => {
+  messages++;
+});
+
+document.querySelector('.js-remove').addEventListener('click', () => {
+  messages--;
+});
