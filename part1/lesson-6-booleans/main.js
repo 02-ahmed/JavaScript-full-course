@@ -70,8 +70,10 @@ document.body.addEventListener('keydown', (event) => {
     playGame('rock');
   } else if (event.key === 'p') {
     playGame('paper');
-  } else if (event.key = 's') {
+  } else if (event.key === 's') {
     playGame('scissors');
+  } else if (event.key === 'a') {
+    autoPlay();
   }
 })
 
