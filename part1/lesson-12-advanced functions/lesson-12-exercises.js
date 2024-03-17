@@ -12,9 +12,8 @@ function runTwice(fun) {
   fun();
 }
 
-runTwice(function() {
-  console.log('12b')
-})
+runTwice(() => console.log('12b')
+)
 
 runTwice(add)
 
@@ -32,7 +31,7 @@ function addToCart() {
   document.querySelector(".js-cart-message").innerHTML = "Added";
   clearTimeout(timeoutId);
 
-  timeoutId = setTimeout(function(){
+  timeoutId = setTimeout(() => {
     document.querySelector(".js-cart-message").innerHTML = "";
   }, 5000);
 }
@@ -41,7 +40,7 @@ document.title = "App";
 
 
 
-setInterval(function() {
+setInterval(() => {
   changeTitle();
 }, 1000)
 
