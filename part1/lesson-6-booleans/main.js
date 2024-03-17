@@ -53,12 +53,7 @@ document.querySelector('.js-scissors-button').addEventListener('click', () => {
 });
 
 document.querySelector('.js-reset-button').addEventListener('click', () => {
-  score.win = 0;
-  score.loss = 0;
-  score.tie = 0;
-  localStorage.removeItem('score');
-  updateScoreElement();
-  alert('Scores were reset');
+  renderConfirmation();
 })
 
 document.querySelector('.js-autoplay-button').addEventListener('click', () => {
@@ -75,12 +70,7 @@ document.body.addEventListener('keydown', (event) => {
   } else if (event.key === 'a') {
     autoPlay();
   }else if (event.key === 'Backspace') {
-    score.win = 0;
-    score.loss = 0;
-    score.tie = 0;
-    localStorage.removeItem('score');
-    updateScoreElement();
-    alert('Scores were reset');
+    renderConfirmation();
   }
 })
 
@@ -150,4 +140,40 @@ function pickComputerMove() {
       }
   
   return computerMove;
+}
+
+function renderConfirmation() {
+  let confirmationHTML = '';
+
+  const html = `
+  <p class ="js-reset-confirmation">
+    Are you sure you want to reset the score?
+    <button class='js-yes-button confirm-button'>Yes</button>
+    <button class='js-no-button confirm-button'>No</button>  
+  </p>
+    
+  `;
+  confirmationHTML+=html;
+
+  document.querySelector('.js-confirmation').innerHTML = confirmationHTML;
+
+  document.querySelector('.js-yes-button').addEventListener('click', () => {
+    document.querySelector('.js-reset-confirmation').innerHTML = '';
+    score.win = 0;
+    score.loss = 0;
+    score.tie = 0;
+    localStorage.removeItem('score');
+    alert(`Score was reset`);
+    updateScoreElement();
+    document.querySelector('.js-confirmation').innerHTML = '';
+    document.querySelector(".js-result").innerHTML = '';
+    document.querySelector(".js-moves").innerHTML = '';
+  });
+
+  document.querySelector('.js-no-button').addEventListener('click',() => {
+    document.querySelector('.js-reset-confirmation').innerHTML = '';
+    document.querySelector('.js-confirmation').innerHTML = '';
+  });
+
+  
 }
