@@ -1,14 +1,18 @@
-let hour = 0;
-let minute = 0;
-let second = 0;
+
+
+let time = JSON.parse(localStorage.getItem('time')) || {
+  hour: 0,
+  minute: 0,
+  second: 0,
+}
 
 let jsHour = document.querySelector('.js-hr');
 let jsMin = document.querySelector('.js-min');
 let jsSec = document.querySelector('.js-sec');
 
-jsSec.innerHTML = `Seconds: ${second}`;
-jsMin.innerHTML = `Minutes: ${minute}`;
-jsHour.innerHTML = `Hours: ${hour}`;
+jsSec.innerHTML = `Seconds: ${time.second}`;
+jsMin.innerHTML = `Minutes: ${time.minute}`;
+jsHour.innerHTML = `Hours: ${time.hour}`;
 
 document.querySelector('.js-start-button').addEventListener('click', () => {
   startTimer();
@@ -26,38 +30,52 @@ let intervalId;
 
 
 function startTimer() {
+
+  if (intervalId) {
+    return;
+  }
+
   intervalId= setInterval(()=> {
-    if (second < 60) {
-      second++;
+    if (time.second < 60) {
+      time.second++;
       
-      if (second >= 60 ) {
-        minute++;
+      if (time.second >= 60 ) {
+        time.minute++;
         
-        second = 0;
-        if (minute >= 60) {
-          minute = 0;
-          hour++;         
+        time.second = 0;
+        if (time.minute >= 60) {
+          time.minute = 0;
+          time.hour++;         
         }
       }
-    }
-    jsSec.innerHTML = `Seconds: ${second}`;
-    jsMin.innerHTML = `Minutes: ${minute}`;
-    jsHour.innerHTML = `Hours: ${hour}`;
-  }, 1000)
+    };
+    localStorage.setItem('time', JSON.stringify(time));
+
+    jsSec.innerHTML = `Seconds: ${time.second}`;
+    jsMin.innerHTML = `Minutes: ${time.minute}`;
+    jsHour.innerHTML = `Hours: ${time.hour}`;
+
+    
+  }, 1000);
+
+  
 }
 
 function stopTimer() {
   clearInterval(intervalId);
+  intervalId = null;
 };
 
 function resetTimer() {
   clearInterval(intervalId);
-  hour=0;
-  minute=0;
-  second=0;
+  time.hour=0;
+  time.minute=0;
+  time.second=0;
 
-  jsSec.innerHTML = `Seconds: ${second}`;
-  jsMin.innerHTML = `Minutes: ${minute}`;
-  jsHour.innerHTML = `Hours: ${hour}`;
+  jsSec.innerHTML = `Seconds: ${time.second}`;
+  jsMin.innerHTML = `Minutes: ${time.minute}`;
+  jsHour.innerHTML = `Hours: ${time.hour}`;
+
+  localStorage.removeItem('time');
 
 }
