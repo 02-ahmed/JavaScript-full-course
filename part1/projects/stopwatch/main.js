@@ -1,6 +1,6 @@
-let hour = 1;
-let minute = 59;
-let second = 55;
+let hour = 0;
+let minute = 0;
+let second = 0;
 
 let jsHour = document.querySelector('.js-hr');
 let jsMin = document.querySelector('.js-min');
@@ -16,7 +16,11 @@ document.querySelector('.js-start-button').addEventListener('click', () => {
 
 document.querySelector('.js-stop-button').addEventListener('click', () => {
   stopTimer();
-})
+});
+
+document.querySelector('.js-reset-button').addEventListener('click', () => {
+  resetTimer();
+});
 
 let intervalId;
 
@@ -44,4 +48,16 @@ function startTimer() {
 
 function stopTimer() {
   clearInterval(intervalId);
+};
+
+function resetTimer() {
+  clearInterval(intervalId);
+  hour=0;
+  minute=0;
+  second=0;
+
+  jsSec.innerHTML = `Seconds: ${second}`;
+  jsMin.innerHTML = `Minutes: ${minute}`;
+  jsHour.innerHTML = `Hours: ${hour}`;
+
 }
