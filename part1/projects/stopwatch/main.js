@@ -12,11 +12,17 @@ jsHour.innerHTML = `Hours: ${hour}`;
 
 document.querySelector('.js-start-button').addEventListener('click', () => {
   startTimer();
+});
+
+document.querySelector('.js-stop-button').addEventListener('click', () => {
+  stopTimer();
 })
+
+let intervalId;
 
 
 function startTimer() {
-  setInterval(()=> {
+  intervalId= setInterval(()=> {
     if (second < 60) {
       second++;
       
@@ -34,4 +40,8 @@ function startTimer() {
     jsMin.innerHTML = `Minutes: ${minute}`;
     jsHour.innerHTML = `Hours: ${hour}`;
   }, 1000)
+}
+
+function stopTimer() {
+  clearInterval(intervalId);
 }
