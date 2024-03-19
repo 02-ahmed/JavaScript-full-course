@@ -10,9 +10,9 @@ let jsHour = document.querySelector('.js-hr');
 let jsMin = document.querySelector('.js-min');
 let jsSec = document.querySelector('.js-sec');
 
-jsSec.innerHTML = `Seconds: ${time.second}`;
-jsMin.innerHTML = `Minutes: ${time.minute}`;
-jsHour.innerHTML = `Hours: ${time.hour}`;
+jsSec.innerHTML = ` : ${time.second}`;
+jsMin.innerHTML = ` : ${time.minute}`;
+jsHour.innerHTML = `  ${time.hour}`;
 
 document.querySelector('.js-start-button').addEventListener('click', () => {
   startTimer();
@@ -51,9 +51,9 @@ function startTimer() {
     };
     localStorage.setItem('time', JSON.stringify(time));
 
-    jsSec.innerHTML = `Seconds: ${time.second}`;
-    jsMin.innerHTML = `Minutes: ${time.minute}`;
-    jsHour.innerHTML = `Hours: ${time.hour}`;
+    jsSec.innerHTML = ` : ${time.second}`;
+    jsMin.innerHTML = ` : ${time.minute}`;
+    jsHour.innerHTML = `${time.hour}`;
 
     
   }, 1000);
@@ -72,9 +72,9 @@ function resetTimer() {
   time.minute=0;
   time.second=0;
 
-  jsSec.innerHTML = `Seconds: ${time.second}`;
-  jsMin.innerHTML = `Minutes: ${time.minute}`;
-  jsHour.innerHTML = `Hours: ${time.hour}`;
+  jsSec.innerHTML = ` : ${time.second}`;
+  jsMin.innerHTML = ` : ${time.minute}`;
+  jsHour.innerHTML = `${time.hour}`;
 
   localStorage.removeItem('time');
 
