@@ -37,3 +37,31 @@ body {
   cursor: pointer;
   padding: 10px 0;
 }
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  
+}
+
+.check {
+  text-decoration: line-through;
+}
+
+.checkbox .checked {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  background-color: green;
+}
