@@ -42,7 +42,7 @@ body {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 1px solid;
+  border: 1px solid ;
   float: left;
   justify-content: center;
   align-items: center;
@@ -54,7 +54,7 @@ body {
   text-decoration: line-through;
 }
 
-.checkbox .checked {
+.checkbox.checked {
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -64,4 +64,5 @@ body {
   align-items: center;
   margin-right: 10px;
   background-color: green;
+  border: none;
 }

@@ -8,8 +8,8 @@ function renderTodoList() {
   todoList.forEach((todoObject, index) => {
   const {name, dueDate, isChecked} = todoObject;
   const html = `
-      <div class="todo-name ${isChecked ? 'check' : ''}"><div class="checkbox"></div>${name}</div>
-      <div>${dueDate}</div>
+      <div class="todo-name ${isChecked ? 'check' : ''}"><div class="checkbox ${isChecked ? 'checked' : ''}"></div>${name}</div>
+      <div class="date ${isChecked ? 'check' : ''}">${dueDate}</div>
       <button class="delete-todo-button js-delete-todo-button">Delete</button>
     `;
   todoListHTML += html;
@@ -36,7 +36,6 @@ function renderTodoList() {
     });
   });
   localStorage.setItem("todoList", JSON.stringify(todoList));
-  console.log(todoList);
   
 }
 
