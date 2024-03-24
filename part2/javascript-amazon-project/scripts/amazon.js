@@ -1,4 +1,4 @@
-const products = [{
+/* const products = [{
   image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
   name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
   rating: {
@@ -33,7 +33,7 @@ const products = [{
     count: 2197
   },
   priceCents: 1899
-}];
+}]; */
 
 let productsHTML = '';
 
