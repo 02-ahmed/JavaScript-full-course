@@ -95,6 +95,8 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
+const addedMessageTimeouts = {}
+
 document.querySelectorAll('.js-add-to-cart').forEach((button) => {
   button.addEventListener('click', () => {
     /* const productId =button.dataset.productId; */
@@ -122,10 +124,22 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
     }
 
     let addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
+
+
     addedMessage.classList.add("added-to-cart-checked");
-    setTimeout(() => {
-      addedMessage.classList.remove("added-to-cart-checked")
-    }, 2000)
+
+    const previousTimeoutId = addedMessageTimeouts[productId];
+
+    if (previousTimeoutId) {
+      clearTimeout(previousTimeoutId)
+    }
+      
+    const timeoutId = setTimeout(() => {
+      addedMessage.classList.remove('added-to-cart-checked');
+    }, 2000);
+
+    addedMessageTimeouts[productId] = timeoutId
+    
 
     let totalQuantity = 0;
     cart.forEach((item) => {
