@@ -121,8 +121,11 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
       });
     }
 
-    let addedMessage = document.querySelector(`.js-added-to-cart-${productId}`)
-    addedMessage.classList.add("added-to-cart-checked")
+    let addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
+    addedMessage.classList.add("added-to-cart-checked");
+    setTimeout(() => {
+      addedMessage.classList.remove("added-to-cart-checked")
+    }, 2000)
 
     let totalQuantity = 0;
     cart.forEach((item) => {
