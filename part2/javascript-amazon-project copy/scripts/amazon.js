@@ -35,9 +35,10 @@
   priceCents: 1899
 }]; */
 
-import {cart, addToCart} from '../data/cart.js';
+import {cart, addToCart, calculateCartQuantity} from '../data/cart.js';
 import { products } from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
+
 
 let productsHTML = '';
 
@@ -105,10 +106,7 @@ const addedMessageTimeouts = {}
 
 
 function updateCartQuantity() {
-  let totalQuantity = 0;
-    cart.forEach((item) => {
-      totalQuantity += item.quantity;
-    });
+  let totalQuantity = calculateCartQuantity()
     if (totalQuantity === 0) {
       totalQuantity = '';
     }
