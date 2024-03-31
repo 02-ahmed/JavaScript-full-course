@@ -99,6 +99,8 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
+updateCartQuantity();
+
 const addedMessageTimeouts = {}
 
 
@@ -107,6 +109,9 @@ function updateCartQuantity() {
     cart.forEach((item) => {
       totalQuantity += item.quantity;
     });
+    if (totalQuantity === 0) {
+      totalQuantity = '';
+    }
 
     document.querySelector('.js-cart-quantity').innerHTML = totalQuantity;
 }
