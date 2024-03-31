@@ -3,6 +3,7 @@ import {products} from '../data/products.js';
 import { formatCurrency } from './utils/money.js';
 
 
+
 let cartSummaryHTML = '';
 
 
@@ -112,3 +113,10 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
     container.remove();
   });
 });
+
+let totalQuantity = 0;
+    cart.forEach((item) => {
+      totalQuantity += item.quantity;
+    });
+
+document.querySelector('.js-checkout-item-number').innerHTML = `${totalQuantity} items`;
