@@ -67,7 +67,5 @@ export function updateQuantity(productId, newQuantity) {
       product.quantity = newQuantity
     }
     saveToStorage();
-
-    console.log(product);
   });
 }

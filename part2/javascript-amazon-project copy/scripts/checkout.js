@@ -48,7 +48,7 @@ cart.forEach((cartItem) => {
           js-update-link" data-product-id="${matchingProduct.id}">
             Update
           </span>
-          <input class="quantity-input js-quantity-input-${matchingProduct.id}" data-product-id="${matchingProduct.id}">
+          <input type="number"class="quantity-input js-quantity-input-${matchingProduct.id}" data-product-id="${matchingProduct.id}">
           <span class="save-quantity-link link-primary js-save-link" data-product-id="${matchingProduct.id}">Save</span>
           <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
             Delete
@@ -134,7 +134,11 @@ document.querySelectorAll('.js-save-link').forEach((link) => {
     document.querySelector(`.js-cart-item-container-${productId}`).classList.remove('is-editing-quantity');
 
     const inputValue = Number(document.querySelector(`.js-quantity-input-${productId}`).value);
-    console.log(inputValue);
+
+    if (inputValue < 1 || inputValue > 1000) {
+      alert('Enter a number between 1 and 999');
+      return;
+    }
 
     updateQuantity(productId, inputValue);
     updateCartQuantity();
@@ -144,6 +148,26 @@ document.querySelectorAll('.js-save-link').forEach((link) => {
   });
 });
 
+document.querySelectorAll('.quantity-input').forEach((input) => {
+  input.addEventListener('keydown', () => {
+    if (event.key === 'Enter') {
+      const productId = input.dataset.productId;
+      document.querySelector(`.js-cart-item-container-${productId}`).classList.remove('is-editing-quantity');
+
+      const inputValue = Number(document.querySelector(`.js-quantity-input-${productId}`).value);
+
+      if (inputValue < 1 || inputValue > 1000) {
+        alert('Enter a number between 1 and 999');
+        return;
+      }
+
+      updateQuantity(productId, inputValue);
+      updateCartQuantity();
+
+      const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`).innerHTML = inputValue;
+      };
+  });
+});
 
 
 function updateCartQuantity() {
