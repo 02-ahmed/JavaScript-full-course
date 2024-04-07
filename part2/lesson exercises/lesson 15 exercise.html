@@ -22,6 +22,22 @@
       console.log(oneMonthBefore.format('MMMM D'));
 
       console.log(fiveDaysAfter.format('dddd'));
+
+      function isWeekend(date) {
+        const weekendDay = date.format('dddd');
+        if (weekendDay === 'Saturday' || weekendDay === 'Sunday') {
+          return weekendDay;
+        }else {
+          return "Not a weekend";
+        }
+      };
+
+      const oneDayBefore = today.subtract(1, 'day');
+
+      console.log(isWeekend(today));
+      console.log(isWeekend(oneMonthBefore));
+      console.log(isWeekend(oneMonthAfter));
+      console.log(isWeekend(oneDayBefore));
     </script>
   </body>
 </html>
