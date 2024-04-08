@@ -5,7 +5,7 @@ import { calculateCartQuantity } from '../../data/cart.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js';
 import { renderPaymentSummary } from './paymentSummary.js';
-
+import { renderCheckoutHeader } from './checkoutHeader.js';
 
 
 export function renderOrderSummary() {
@@ -130,7 +130,7 @@ export function renderOrderSummary() {
       
       /* const container = document.querySelector(`.js-cart-item-container-${productId}`);
       container.remove(); */ //removed this code which used dom to update the page and used renderOrderSummary() instead
-      
+
       renderOrderSummary();
       updateCartQuantity();
 
@@ -191,7 +191,9 @@ export function renderOrderSummary() {
   function updateCartQuantity() {
     let totalQuantity = calculateCartQuantity();
 
-    document.querySelector('.js-checkout-item-number').innerHTML = `${totalQuantity} items`;
+    /* document.querySelector('.js-checkout-item-number').innerHTML = `${totalQuantity} items`; */
+    renderCheckoutHeader();
+    
   }
 
 
