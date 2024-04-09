@@ -153,9 +153,6 @@ export function renderOrderSummary() {
       renderOrderSummary();
       renderPaymentSummary();
       renderCheckoutHeader();
-
-      const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`).innerHTML = inputValue;
-      
     });
   });
 
@@ -177,8 +174,6 @@ export function renderOrderSummary() {
         renderOrderSummary();
         renderPaymentSummary();
         renderCheckoutHeader();
-
-        const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`).innerHTML = inputValue;
         };
     });
   });
