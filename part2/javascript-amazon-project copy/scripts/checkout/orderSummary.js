@@ -135,6 +135,7 @@ export function renderOrderSummary() {
       updateCartQuantity();
 
       renderPaymentSummary();
+      renderCheckoutHeader();
 
     });
   });
@@ -192,7 +193,7 @@ export function renderOrderSummary() {
     let totalQuantity = calculateCartQuantity();
 
     /* document.querySelector('.js-checkout-item-number').innerHTML = `${totalQuantity} items`; */
-    renderCheckoutHeader();
+    /* renderCheckoutHeader(); */
     
   }
 
