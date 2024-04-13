@@ -109,7 +109,11 @@ function updateCartQuantity() {
   let totalQuantity = calculateCartQuantity()
     if (totalQuantity === 0) {
       totalQuantity = '';
-    }
+    };
+
+    /* cart.forEach((cartItem) => {
+      totalQuantity += cartItem.quantity
+    }); */
 
     document.querySelector('.js-cart-quantity').innerHTML = totalQuantity;
 }

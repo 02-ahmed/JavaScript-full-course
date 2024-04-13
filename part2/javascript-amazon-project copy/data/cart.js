@@ -31,16 +31,16 @@ export function addToCart(productId) {
     }); 
 
     let quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
-    let quantity = parseInt(quantitySelector.value);
+    /* let quantity = Number(quantitySelector.value); */
     
 
     if (matchingItem) {
-      matchingItem.quantity+=quantity;
+      matchingItem.quantity+=1;
       console.log(matchingItem)
     }else {
       cart.push({
         productId,
-        quantity,
+        quantity:1,
         deliveryOptionId: '1',
       });
     }
