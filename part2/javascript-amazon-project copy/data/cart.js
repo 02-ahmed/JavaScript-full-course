@@ -1,5 +1,3 @@
-
-
 export let cart;
 
 loadFromStorage();
@@ -31,16 +29,16 @@ export function addToCart(productId) {
     }); 
 
     let quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
-    /* let quantity = Number(quantitySelector.value); */
+    let quantity = Number(quantitySelector.value);
     
 
     if (matchingItem) {
-      matchingItem.quantity+=1;
+      matchingItem.quantity+=quantity;
       console.log(matchingItem)
     }else {
       cart.push({
         productId,
-        quantity:1,
+        quantity,
         deliveryOptionId: '1',
       });
     }
